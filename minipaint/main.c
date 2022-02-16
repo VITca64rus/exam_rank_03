@@ -16,6 +16,7 @@ int	main(int argc, char **argv)
 {
 	FILE	*file = NULL;
 	char	*map = NULL;
+	int		count, width, height;
 
 	if (argc != 2)
 	{
