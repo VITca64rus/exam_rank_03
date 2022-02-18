@@ -31,7 +31,8 @@ int	main(int argc, char **argv)
 	FILE	*file = NULL;
 	char	*map = NULL;
 	int		count, width, height;
-	char	background;
+	char	background, type, c;
+	float	x, y, r;
 
 	if (argc != 2)
 	{
@@ -48,7 +49,11 @@ int	main(int argc, char **argv)
 	if (!map)
 		return(42);
 	memset(map, background, width * height);
+	while(1)
+	{
+		count = fscanf(file, "%c %f %f %f %c\n", &type, &x, &y, &r, &c);
 
+	}
 
 
 	ft_print_map(map, width, height);
