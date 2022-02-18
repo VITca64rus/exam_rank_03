@@ -52,6 +52,10 @@ int	main(int argc, char **argv)
 	while(1)
 	{
 		count = fscanf(file, "%c %f %f %f %c\n", &type, &x, &y, &r, &c);
+		if (count == -1)
+			break ;
+		if (count != 5 || r <= 0.0f || (type != 'c' && type != 'C'))
+			return (ft_exit(file, map));
 
 	}
 
