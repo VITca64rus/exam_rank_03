@@ -65,7 +65,8 @@ int	main(int argc, char **argv)
 			{
 				dist = sqrtf(powf(x - j, 2) + powf(y - i, 2));
 				if (dist <= r)
-					map[i * width + j] = c;
+					if (type == 'C' || dist > r - 1)
+						map[i * width + j] = c;
 				j++;
 			}
 			i++;
