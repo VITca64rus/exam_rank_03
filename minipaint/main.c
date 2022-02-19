@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 int	ft_exit(FILE *file, char *map)
 {
@@ -30,9 +31,9 @@ int	main(int argc, char **argv)
 {
 	FILE	*file = NULL;
 	char	*map = NULL;
-	int		count, width, height;
+	int		count, width, height, i, j;
 	char	background, type, c;
-	float	x, y, r;
+	float	x, y, r, dist;
 
 	if (argc != 2)
 	{
@@ -42,7 +43,7 @@ int	main(int argc, char **argv)
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 		return(ft_exit(file, map));
-	count = fscanf(file, "%i %i %c", &width, &height, &background);
+	count = fscanf(file, "%i %i %c\n", &width, &height, &background);
 	if (count != 3 || width <= 0 || width > 300 || height > 300 || height <= 0)
 		return(ft_exit(file, map));
 	map = calloc(width, height);
@@ -56,7 +57,19 @@ int	main(int argc, char **argv)
 			break ;
 		if (count != 5 || r <= 0.0f || (type != 'c' && type != 'C'))
 			return (ft_exit(file, map));
-
+		i = 0;
+		while (i < height)
+		{
+			j = 0;
+			while (j < width)
+			{
+				dist = sqrtf(powf(x - j, 2) + powf(y - i, 2));
+				if (dist <= r)
+					map[i * width + j] = c;
+				j++;
+			}
+			i++;
+		}
 	}
 
 
