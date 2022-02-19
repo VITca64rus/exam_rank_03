@@ -1,9 +1,20 @@
-my program - main.c
-program from ecole42 - our_mini_paint.c
+# EXAM RANK 03
 
-for test and check results:
-gcc main.c && ./a.out maps/2 > res
-gcc our_mini_paint.c && ./a.out maps/2 > res
-diff -s res res1
+## How to build and run
 
-If program work correctle you can see: "Files res and res1 are identical"
+    $> gcc main.c
+    $> ./a.out <maps file>
+
+## How to check
+
+We must run our program and then run program from ecole42
+
+    $> gcc main.c
+    $> ./a.out <maps file> > res1
+    $> gcc our_mini_paint.c
+    $> ./a.out <maps file> > res2
+    $> diff -s res1 res2
+
+If program work correctly we must see:
+
+    $> Files res1 and res2 are identical
