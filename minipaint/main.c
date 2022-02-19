@@ -72,8 +72,6 @@ int	main(int argc, char **argv)
 			i++;
 		}
 	}
-
-
 	ft_print_map(map, width, height);
 	free(map);
 	fclose(file);
