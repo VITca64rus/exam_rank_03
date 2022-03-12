@@ -20,3 +20,22 @@ We must run our program and then run program from ecole42
 If program work correctly we must see:
 
     $> Files res1 and res2 are identical
+
+## Allowed function
+
+- fopen
+- fread
+- fscanf
+- fclose
+- write
+- malloc
+- calloc
+- realloc
+- free
+- memset
+- powf
+- sqrtf
+
+## Screnshots
+
+![alt text](picture.png "screenshot")​
